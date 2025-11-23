@@ -1,0 +1,27 @@
+graph TD
+    User[👤 你（最高权限）]
+
+    CONST[🧾 宪法 Constitution.yaml]
+
+    subgraph Governance[治理对象]
+        ModeMgr[Mode Manager]
+        RiskMgr[Risk Manager]
+        Exec[Execution Engine]
+        LLM[LLM Agents]
+        Dec[Decision Engine]
+        Monitor[Monitor & Alert]
+    end
+
+    User --> CONST
+    User --> ModeMgr
+    User --> Monitor
+
+    CONST --> ModeMgr
+    CONST --> RiskMgr
+    CONST --> Exec
+
+    LLM --> Dec
+    Dec --> RiskMgr
+    RiskMgr --> Exec
+
+    Monitor --> User

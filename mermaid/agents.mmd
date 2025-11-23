@@ -1,0 +1,42 @@
+graph TD
+    subgraph LLM_Agents[🧠 LLM Agent 层]
+        Earnings[Earnings Agent<br/>财报 & 电话会议分析]
+        News[News Agent<br/>公司新闻/事件分析]
+        Industry[Industry Agent<br/>行业 & 竞品对比]
+        Macro[Macro Agent<br/>宏观 & 利率 & CPI]
+        Explainer[Explain Agent<br/>生成解释/报告]
+    end
+
+    subgraph Input[📥 输入数据]
+        Filings[财报正文/10-Q/10-K]
+        Transcripts[电话会议纪要]
+        NewsText[新闻/公告正文]
+        MacroText[宏观事件报道]
+        StructuredFacts[结构化财务/行业数据]
+    end
+
+    subgraph Output[📤 输出结果]
+        EarningsJSON[earnings_score<br/>趋势/风险标记 JSON]
+        NewsJSON[news_score<br/>情绪/影响范围 JSON]
+        IndustryJSON[industry_score<br/>相对强弱 JSON]
+        MacroJSON[macro_risk_level<br/>板块偏好 JSON]
+        HumanReport[自然语言解释/投资逻辑报告]
+    end
+
+    Input --> Earnings
+    Input --> News
+    Input --> Industry
+    Input --> Macro
+
+    Earnings --> EarningsJSON
+    News --> NewsJSON
+    Industry --> IndustryJSON
+    Macro --> MacroJSON
+
+    EarningsJSON --> Explainer
+    NewsJSON --> Explainer
+    IndustryJSON --> Explainer
+    MacroJSON --> Explainer
+    StructuredFacts --> Explainer
+
+    Explainer --> HumanReport

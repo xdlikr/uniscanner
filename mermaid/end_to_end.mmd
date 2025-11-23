@@ -1,0 +1,42 @@
+sequenceDiagram
+    participant U as 👤 你
+    participant M as 🧾 ModeManager
+    participant D as 📥 Data Pipeline
+    participant L as 🧠 LLM Agents
+    participant S as ⚖️ Scoring Engine
+    participant P as 🛡️ Portfolio & Risk
+    participant E as 💼 Execution
+    participant Mon as 📊 Monitor/Audit
+
+    U->>M: 查看/设置模式（SIM/DRY_RUN/LIVE）
+    M->>D: 允许每日任务运行？
+
+    D->>D: 抓取行情/财报/新闻/宏观
+    D->>D: 清洗/对齐/存储数据
+
+    D->>L: 传入新财报/新闻/宏观文本
+    L->>L: 各 Agent 生成结构化 JSON 分析
+    L->>S: 传入 earnings/news/industry/macro scores
+
+    S->>S: 计算综合得分 CompositeScore
+    S->>S: 生成 Buy/Hold/Sell 信号
+    S->>P: 传入信号 + 当前持仓
+
+    P->>P: Portfolio Builder 生成目标仓位
+    P->>P: RiskManager 按宪法裁剪仓位
+    P->>E: 传入“合法后的目标仓位”
+
+    E->>E: 计算订单：买入/卖出数量
+    E->>E: 应用执行规则（价格/频次校验）
+    alt LIVE 模式 & 通过风控
+        E->>Broker: 通过 API 发送订单
+        Broker-->>E: 返回成交结果
+    else DRY_RUN/SIM
+        E->>E: 只记录，不真实下单
+    end
+
+    E->>Mon: 记录订单与成交日志
+    S->>Mon: 记录评分与信号
+    L->>Mon: 记录 LLM 输入/输出
+    P->>Mon: 记录风险与仓位变化
+    Mon->>U: 仪表盘 & 告警

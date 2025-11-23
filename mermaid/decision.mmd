@@ -1,0 +1,28 @@
+graph LR
+    Signals[⚖️ Signal Generator<br/>Buy/Hold/Sell 信号]
+    PB[Portfolio Builder<br/>目标仓位计算]
+    RM[🛡️ Risk Manager<br/>应用宪法风险约束]
+    OG[Order Generator<br/>订单生成]
+    EC[Execution Checker<br/>执行规则检查]
+    API[Broker API<br/>券商接口]
+
+    CONST[🧾 Constitution.yaml<br/>风险/权限/回撤规则]
+
+    Signals --> PB --> RM --> OG --> EC --> API
+
+    CONST --> RM
+    CONST --> EC
+
+    subgraph Decisions[决策路径]
+        Signals --> PB --> RM
+    end
+
+    subgraph RiskControls[风险控制点]
+        RM:::risk
+        EC:::risk
+    end
+
+    classDef risk fill=#ffeeee,stroke=#cc0000,stroke-width=2px;
+
+    RM -->|拒绝 / 裁剪仓位| OG
+    EC -->|拒绝订单 / 触发停机| API

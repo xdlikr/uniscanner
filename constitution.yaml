@@ -1,0 +1,185 @@
+# Value Investing Constitution
+# Based on Buffett's investment philosophy and market cycle wisdom
+# 价值投资宪法
+# 基于巴菲特投资哲学与市场周期智慧
+# Version: 2.0 | Revision Date: 2024-12-19
+# 版本: 2.0 | 修订日期: 2024-12-19
+
+constitution: # 宪法
+  meta_info: # 元信息
+    title: "Value Investing Constitution" # 标题: "价值投资宪法"
+    core_concept: "Survive and achieve capital appreciation throughout a full market cycle" # 核心理念: "在完整市场周期中生存并实现资本增值"
+    philosophy: "Long-term compound growth based on intrinsic business value" # 投资哲学: "基于企业内在价值的长期复合增长"
+    risk_first: "Always avoid ruinous losses" # 风险第一: "永远避免毁灭性损失"
+
+  system_identity: # 身份声明
+    system_type: "LLM-assisted fundamental investment system" # 系统类型: "LLM辅助的基本面投资系统"
+    operation_frequency: "Low-to-medium frequency, biased towards long-term holding" # 操作频率: "中低频，偏长期持有"
+    inspirations: # 灵感来源
+      - "Benjamin Graham's Margin of Safety Principle" # "本杰明·格雷厄姆的安全边际原则"
+      - "Philip Fisher's Growth Investing" # "菲利普·费雪的成长投资"
+      - "Charlie Munger's Latticework of Mental Models" # "查理·芒格的多元思维模型"
+      - "Howard Marks' Cycle Awareness" # "霍华德·马克斯的周期意识"
+
+  core_principles: # 核心投资原则
+    - "Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1" # "规则一：永远不要亏钱；规则二：永远不要忘记规则一"
+    - "Invest only in businesses whose business models you can understand" # "只投资于你能理解其商业模式的企业"
+    - "Price is what you pay, value is what you get" # "价格是你付出的，价值是你得到的"
+    - "Be fearful when others are greedy, and greedy when others are fearful" # "在别人贪婪时恐惧，在别人恐惧时贪婪"
+    - "Our favorite holding period is forever" # "我们的favorite holding period is forever"
+    - "Diversification is protection against ignorance. It makes little sense if you know what you are doing" # "分散化是对无知的保护，但如果你知道自己在做什么，分散化就没有意义"
+
+  market_state: # 市场状态感知
+    identifiers: # 识别因子
+      - "S&P 500 Shiller PE Ratio" # "标普500 Shiller PE比率"
+      - "Market Sentiment Indicators (VIX, Put/Call Ratio)" # "市场情绪指标(VIX, Put/Call比率)"
+      - "Credit Spread Trend" # "信用利差变化方向"
+      - "Fed Policy Stance" # "美联储政策立场"
+      - "Percentage of Stocks Above 200-Day Moving Average" # "主要指数200日均线上方股票占比"
+
+    definitions: # 状态定义
+      normal_market: "Shiller PE < 25, VIX < 20, Credit Spreads Narrowing" # 正常市场: "Shiller PE < 25, VIX < 20, 信用利差收窄"
+      cautious_market: "Shiller PE 25-30, VIX 20-30, Credit Spreads Flat" # 谨慎市场: "Shiller PE 25-30, VIX 20-30, 信用利差走平"
+      dangerous_market: "Shiller PE > 30, VIX > 30, Credit Spreads Widening" # 危险市场: "Shiller PE > 30, VIX > 30, 信用利差扩大"
+
+    parameters: # 参数调整
+      normal_market: # 正常市场
+        max_capital_usage: 0.90 # 最大资金使用比率: 0.90
+        max_single_position: 0.15 # 单一头寸上限: 0.15
+        safety_margin_requirement: "20% Discount" # 新建仓安全边际要求: "20%折扣"
+      
+      cautious_market: # 谨慎市场
+        max_capital_usage: 0.70 # 最大资金使用比率: 0.70
+        max_single_position: 0.08 # 单一头寸上限: 0.08
+        safety_margin_requirement: "30% Discount" # 新建仓安全边际要求: "30%折扣"
+        min_cash_ratio: 0.20 # 现金比例下限: 0.20
+      
+      dangerous_market: # 危险市场
+        max_capital_usage: 0.50 # 最大资金使用比率: 0.50
+        max_single_position: 0.04 # 单一头寸上限: 0.04
+        safety_margin_requirement: "40% Discount" # 新建仓安全边际要求: "40%折扣"
+        min_cash_ratio: 0.40 # 现金比例下限: 0.40
+        allow_adding_position: true # 允许对现有持仓加仓: true
+
+  risk_budget: # 风险预算
+    max_capital_usage: 0.80 # 最大资金使用比率: 0.80
+    max_single_position: 0.10 # 单一头寸上限: 0.10
+    max_sector_exposure: 0.20 # 单一行业暴露上限: 0.20
+    max_drawdown: 0.20 # 最大回撤限制: 0.20
+    liquidity_requirements: # 流动性要求
+      min_market_cap: ">$5 Billion" # 最低市值: ">50亿美元"
+      min_daily_volume: ">$100 Million" # 最低日均成交额: ">1亿美元"
+      prohibited_types: ["Penny Stocks", "OTC Market", "Illiquid ADRs"] # 禁止交易类型: ["仙股", "OTC市场", "流动性差的ADR"]
+
+  quality_standards: # 企业质量标准
+    business_model: # 商业模式
+      - "Must understand how the business makes money" # "必须能够理解企业如何赚钱"
+      - "Must have sustainable competitive advantage (Economic Moat)" # "必须具有可持续的竞争优势(经济护城河)"
+      - "Must have pricing power" # "必须具有定价能力"
+    
+    financial_health: # 财务健康
+      - "Long-term ROE > 12%" # "长期ROE > 12%"
+      - "Operating cash flow consistently positive and growing" # "经营现金流持续为正且增长"
+      - "Debt-to-Equity Ratio < 50%" # "负债权益比 < 50%"
+      - "Gross margin stable or improving" # "毛利率稳定或改善"
+    
+    management: # 管理层
+      - "CEO has integrity and prioritizes shareholder interests" # "CEO品格正直，以股东利益为重"
+      - "Excellent capital allocation skills" # "资本配置能力优秀"
+      - "Transparent communication, no exaggeration" # "沟通透明，不夸大其词"
+
+  valuation_principles: # 估值原则
+    safety_margin: # 安全边际
+      normal: "Price 20% below intrinsic value" # 正常估值: "价格低于内在价值20%"
+      preferred: "Price 30% below intrinsic value" # 优选估值: "价格低于内在价值30%"
+      excellent: "Price 40%+ below intrinsic value" # 极佳估值: "价格低于内在价值40%以上"
+    
+    methods: # 估值方法
+      - "Discounted Cash Flow (DCF) Analysis" # "现金流折现分析"
+      - "PE Ratio vs History and Peers" # "市盈率与历史及同业比较"
+      - "PB Ratio for Financials" # "市净率对于金融股的适用性"
+      - "EV/EBITDA for Asset-Heavy Industries" # "EV/EBITDA对于重资产行业的适用性"
+
+  emergency_rules: # 紧急规则
+    triggers: # 触发器
+      - "Shiller PE > 35" # "Shiller PE > 35"
+      - "VIX > 40 and rising" # "VIX > 40并持续上升"
+      - "3+ unrelated sectors drop >10% in a single day" # "3个以上无关行业单日同时下跌>10%"
+      - "Significant deterioration in treasury market liquidity" # "国债市场流动性显著恶化"
+      - "Confirmed systemic risk event" # "系统性风险事件确认"
+    
+    response_plan: # 应对预案
+      stage_1_warning: "Stop all new positions, reduce exposure to 70%" # 第一阶段(预警): "停止所有新建仓，减仓至70%"
+      stage_2_crisis: "Reduce exposure to 50%, keep only core high-quality holdings" # 第二阶段(危机): "减仓至50%，只保留核心优质持仓"
+      stage_3_extreme: "Hold cash and short-term treasuries, wait for opportunities" # 第三阶段(极端): "持有现金和短期国债，等待机会"
+      
+    cooldown_rules: # 冷静期规则
+      - "Wait at least 10 trading days after any emergency reduction before reopening positions" # "任何紧急减仓后，至少等待10个交易日才可重新建仓"
+      - "New positions during crisis must meet 50% safety margin requirement" # "危机期间新建仓必须满足50%安全边际要求"
+
+  investment_checklist: # 投资检查清单
+    before_buying: # 买入前必须回答
+      - "Do I understand this business's model?" # "我是否理解这个企业的商业模式？"
+      - "Does this business have a durable competitive advantage?" # "这个企业是否具有持久的竞争优势？"
+      - "Is management honest and capable?" # "管理层是否诚实且有能力？"
+      - "Is the price significantly below conservative intrinsic value?" # "价格是否大幅低于保守估算的内在价值？"
+      - "Am I willing to hold this business for 10 years?" # "我是否愿意持有这个企业10年？"
+      - "Will this investment let me sleep well at night?" # "这个投资是否会让我夜间安眠？"
+    
+    during_holding: # 持有期间监控
+      - "Has the business fundamentals deteriorated?" # "企业基本面是否发生恶化？"
+      - "Is the competitive advantage being eroded?" # "竞争优势是否被侵蚀？"
+      - "Has the valuation become extremely overvalued?" # "估值是否变得极度高估？"
+      - "Is there a better investment opportunity?" # "是否有更好的投资机会出现？"
+
+  execution_discipline: # 执行纪律
+    best_practices: # 交易最佳实践
+      - "Large orders must be split (VWAP/TWAP)" # "大额订单必须分批执行(VWAP/TWAP)"
+      - "Avoid large trades in the first 30 mins and last 15 mins of trading" # "避免在开盘前30分钟和收盘前15分钟进行大额交易"
+      - "Wait at least 2 hours after earnings release before trading" # "财报公布后等待至少2小时才可交易"
+      - "Position adjustments on Fed meeting days must not exceed 3%" # "美联储议息会议当日仓位调整不得超过3%"
+    
+    price_protection: # 价格保护
+      - "Max market order size: 1% of total assets" # "市价单最大金额限制：总资产的1%"
+      - "Limit order deviation check: ±2% in normal market, ±3% in volatile market" # "限价单与市价偏离度检查：正常市场±2%，波动市场±3%"
+
+  llm_guidelines: # LLM辅助规范
+    role: "Research assistant and analysis tool, not a decision maker" # 角色定位: "研究助手与分析工具，非决策主体"
+    usage_scope: # 使用范围
+      - "Financial data analysis and summarization" # "财务数据分析与摘要"
+      - "Industry research assistance" # "行业研究辅助"
+      - "Competitive landscape analysis" # "竞争格局分析"
+      - "Management communication interpretation" # "管理层沟通解读"
+    
+    restrictions: # 限制条件
+      - "All investment decisions must pass human common sense test" # "所有投资决策必须经过人类常识检验"
+      - "Investments that cannot be explained in simple language must be abandoned" # "无法用简单语言解释的投资必须放弃"
+      - "Corporate culture and CEO assessment must be done by humans" # "企业文化和CEO评估必须由人类完成"
+      - "LLM signals must be cross-validated with fundamental analysis" # "LLM信号必须与基本面分析交叉验证"
+
+  stress_test_requirements: # 压力测试要求
+    historical_scenarios: # 必须测试的历史场景
+      - "1973-74 Bear Market (-48%)" # "1973-74年熊市(-48%)"
+      - "1987 Black Monday (-20% single day)" # "1987年黑色星期一(-20%单日)"
+      - "2000-2002 Tech Bubble (-49%)" # "2000-2002年科技股泡沫(-49%)"
+      - "2008-2009 Financial Crisis (-57%)" # "2008-2009年金融危机(-57%)"
+      - "2020 Pandemic Shock (-34%)" # "2020年疫情冲击(-34%)"
+    
+    passing_criteria: # 通过标准
+      - "Max drawdown < 40% in all test scenarios" # "在所有测试场景中最大回撤<40%"
+      - "Recover to previous high within 36 months after test period" # "在测试期结束后36个月内恢复前高"
+      - "Portfolio outperforms benchmark by at least 10 percentage points during crisis" # "组合在危机中表现优于基准至少10个百分点"
+
+  cash_management_philosophy: # 现金管理哲学
+    - "Cash is not waiting, it is a strategic weapon" # "现金不是等待，而是战略性武器"
+    - "Always keep ammunition for once-in-a-lifetime opportunities" # "永远为一生难得的机会保持弹药"
+    - "Patience beats action when there are no obvious opportunities" # "没有明显机会时，耐心胜过行动"
+    - "Cash transforms from a defensive asset to an offensive asset during market panic" # "市场恐慌时，现金从防御资产转为进攻资产"
+
+  final_principles: # 最终原则
+    - "Investing is simple, but not easy" # "投资很简单，但并不容易"
+    - "The market can remain irrational longer than you can remain solvent" # "市场保持非理性的时间可能长于你保持偿付能力的时间"
+    - "Ten-baggers come from holding, while avoiding huge losses comes from discipline" # "十倍股源于持有，而避免巨额亏损源于纪律"
+    - "When the music stops, make sure you are not the one without a seat" # "当音乐停止时，确保你不是那个没有座位的人"
+    - "Always leave room for unknown unknowns" # "永远为未知的未知预留余地"
+    - "You only need to get rich once, which means avoiding ruinous mistakes is more important than chasing high returns" # "你只需要发财一次，这意味着避免毁灭性错误比追求高回报更重要"

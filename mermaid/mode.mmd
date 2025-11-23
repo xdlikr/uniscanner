@@ -1,0 +1,17 @@
+stateDiagram-v2
+    [*] --> SIMULATION
+
+    SIMULATION: 仿真模式\n回放/回测，不连券商
+    DRY_RUN: 影子模式\n连行情，不下真实单
+    LIVE: 实盘模式\n自动交易
+
+    SIMULATION --> DRY_RUN: 条件：\n基本流程跑通\n无重大错误
+    DRY_RUN --> LIVE: 条件：\n≥4周 SIM\n≥2周 DRY_RUN\n通过风控测试\n人工确认
+
+    LIVE --> DRY_RUN: 手动切换 / Kill Switch
+    LIVE --> EMERGENCY: 触发紧急条件（回撤/LLM/技术异常）
+    DRY_RUN --> EMERGENCY: 重大技术异常
+
+    EMERGENCY: 紧急模式\n只允许减仓或清仓\n禁止新增仓位
+
+    EMERGENCY --> DRY_RUN: 人工解除\n确认问题根因已排除

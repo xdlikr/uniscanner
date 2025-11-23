@@ -1,0 +1,81 @@
+graph TD
+    User[👤 你（系统管理员 / 研究员）]
+
+    subgraph G[🧾 宪法 & 治理层 Constitution & Governance]
+        CONST[Constitution.yaml<br/>系统最高规则]
+        ModeManager[Mode Manager<br/>模式管理 SIM/DRY_RUN/LIVE]
+    end
+
+    subgraph D[📥 数据层 Data Layer]
+        Ingestion[Data Ingestion<br/>行情/财报/新闻/宏观抓取]
+        Cleaning[Data Cleaning<br/>缺失值/时间戳/去重]
+        Storage[Data Storage<br/>DB+对象存储+版本]
+    end
+
+    subgraph LLM[🧠 LLM 分析层 LLM Agent Layer]
+        EarningsAgent[Earnings Agent<br/>财报/电话会议分析]
+        NewsAgent[News Agent<br/>新闻/事件分析]
+        IndustryAgent[Industry Agent<br/>行业/竞品对比]
+        MacroAgent[Macro Agent<br/>宏观环境分析]
+        ExplainAgent[Explain Agent<br/>决策解释/总结]
+    end
+
+    subgraph DEC[⚖️ 决策与评分层 Scoring & Decision Engine]
+        ScoringEngine[Scoring Engine<br/>综合得分/评级]
+        SignalGenerator[Signal Generator<br/>Buy/Hold/Sell 信号]
+    end
+
+    subgraph RISK[🛡️ 风险控制层 Risk & Portfolio]
+        PortfolioBuilder[Portfolio Builder<br/>目标仓位计算]
+        RiskManager[Risk Manager<br/>仓位/行业/回撤约束]
+    end
+
+    subgraph EXEC[💼 执行层 Execution Layer]
+        OrderGenerator[Order Generator<br/>订单生成]
+        BrokerAPI[Broker API Adapter<br/>券商适配]
+    end
+
+    subgraph MON[📊 监控 & 审计层 Monitoring & Audit]
+        Monitor[Realtime Monitor<br/>收益/风险监控]
+        Alert[Alert System<br/>告警/通知]
+        AuditLog[Audit Logger<br/>完整审计日志]
+    end
+
+    User --> CONST
+    User --> ModeManager
+    ModeManager -->|限制/配置| Ingestion
+    ModeManager --> LLM
+    ModeManager --> DEC
+    ModeManager --> RISK
+    ModeManager --> EXEC
+
+    CONST --> ModeManager
+    CONST --> RiskManager
+    CONST --> EXEC
+    CONST --> Monitor
+
+    Ingestion --> Cleaning --> Storage
+
+    Storage --> EarningsAgent
+    Storage --> NewsAgent
+    Storage --> IndustryAgent
+    Storage --> MacroAgent
+
+    EarningsAgent --> ScoringEngine
+    NewsAgent --> ScoringEngine
+    IndustryAgent --> ScoringEngine
+    MacroAgent --> ScoringEngine
+
+    ScoringEngine --> SignalGenerator
+    SignalGenerator --> PortfolioBuilder
+    PortfolioBuilder --> RiskManager
+    RiskManager --> OrderGenerator
+    OrderGenerator --> BrokerAPI
+
+    BrokerAPI --> AuditLog
+    RiskManager --> AuditLog
+    ScoringEngine --> AuditLog
+    LLM --> AuditLog
+
+    Monitor --> User
+    Alert --> User

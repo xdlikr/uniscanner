@@ -1,0 +1,128 @@
+constitution:
+  meta_info:
+    title: "Test Constitution"
+    core_concept: "Test Constitution Configuration"
+    philosophy: "Long-term compound growth based on intrinsic business value"
+    risk_first: "Always avoid ruinous losses"
+
+  system_identity:
+    system_type: "LLM-assisted fundamental investment system"
+    operation_frequency: "Low-to-medium frequency, biased towards long-term holding"
+    inspirations:
+      - "Test Inspiration"
+
+  core_principles:
+    - "Rule No. 1: Never lose money"
+    - "Rule No. 2: Never forget Rule No. 1"
+
+  market_state:
+    identifiers:
+      - "S&P 500 Shiller PE Ratio"
+      - "Market Sentiment Indicators (VIX, Put/Call Ratio)"
+      - "Credit Spread Trend"
+      - "Fed Policy Stance"
+      - "Percentage of Stocks Above 200-Day Moving Average"
+    
+    definitions:
+      normal_market: "Shiller PE < 25"
+      cautious_market: "Shiller PE 25-30"
+      dangerous_market: "Shiller PE > 30"
+    
+    parameters:
+      normal_market:
+        max_capital_usage: 0.90
+        max_single_position: 0.15
+        safety_margin_requirement: "20% Discount"
+      cautious_market:
+        max_capital_usage: 0.70
+        max_single_position: 0.08
+        safety_margin_requirement: "30% Discount"
+        min_cash_ratio: 0.20
+      dangerous_market:
+        max_capital_usage: 0.50
+        max_single_position: 0.04
+        safety_margin_requirement: "40% Discount"
+        min_cash_ratio: 0.40
+        allow_adding_position: true
+
+  risk_budget:
+    max_capital_usage: 0.80
+    max_single_position: 0.10
+    max_sector_exposure: 0.20
+    max_drawdown: 0.20
+    liquidity_requirements:
+      min_market_cap: ">$5 Billion"
+      min_daily_volume: ">$100 Million"
+
+  quality_standards:
+    business_model:
+      - "Must understand how the business makes money"
+      - "Must have sustainable competitive advantage"
+    financial_health:
+      - "Long-term ROE > 12%"
+      - "Operating cash flow consistently positive and growing"
+    management:
+      - "CEO has integrity"
+      - "Excellent capital allocation skills"
+
+  valuation_principles:
+    safety_margin:
+      normal: "Price 20% below intrinsic value"
+      preferred: "Price 30% below intrinsic value"
+      excellent: "Price 40%+ below intrinsic value"
+    methods:
+      - "Discounted Cash Flow (DCF) Analysis"
+      - "PE Ratio vs History and Peers"
+
+  emergency_rules:
+    triggers:
+      - "Shiller PE > 35"
+      - "VIX > 40 and rising"
+    response_plan:
+      stage_1_warning: "Stop all new positions, reduce exposure to 70%"
+      stage_2_crisis: "Reduce exposure to 50%, keep only core high-quality holdings"
+    cooldown_rules:
+      - "Wait at least 10 trading days"
+      - "New positions during crisis must meet 50% safety margin requirement"
+
+  investment_checklist:
+    before_buying:
+      - "Do I understand this business's model?"
+      - "Is the price significantly below conservative intrinsic value?"
+    during_holding:
+      - "Has the business fundamentals deteriorated?"
+      - "Is the competitive advantage being eroded?"
+
+  execution_discipline:
+    best_practices:
+      - "Large orders must be split"
+      - "Avoid large trades in the first 30 mins"
+    price_protection:
+      - "Max market order size: 1% of total assets"
+      - "Limit order deviation check: ±2% in normal market"
+
+  llm_guidelines:
+    role: "Research assistant and analysis tool, not a decision maker"
+    usage_scope:
+      - "Financial data analysis and summarization"
+      - "Industry research assistance"
+    restrictions:
+      - "All investment decisions must pass human common sense test"
+      - "Investments that cannot be explained in simple language must be abandoned"
+
+  stress_test_requirements:
+    historical_scenarios:
+      - "2008-2009 Financial Crisis (-57%)"
+      - "2020 Pandemic Shock (-34%)"
+    passing_criteria:
+      - "Max drawdown < 40% in all test scenarios"
+      - "Recover to previous high within 36 months after test period"
+      - "Portfolio outperforms benchmark by at least 10 percentage points during crisis"
+
+  cash_management_philosophy:
+    - "Cash is not waiting, it is a strategic weapon"
+    - "Always keep ammunition for once-in-a-lifetime opportunities"
+
+  final_principles:
+    - "Investing is simple, but not easy"
+    - "Avoiding ruinous mistakes is more important than chasing high returns"
